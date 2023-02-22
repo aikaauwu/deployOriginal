@@ -202,7 +202,7 @@
     <description></description>
     <display-name>ListPatrolmanController</display-name>
     <servlet-name>ListPatrolmanController</servlet-name>
-    <servlet-class>ListPatrolmanController</servlet-class>
+    <servlet-class>Servlet.ListPatrolmanController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ListPatrolmanController</servlet-name>
@@ -210,5 +210,59 @@
   </servlet-mapping>
   
   
+  <servlet>
+    <description></description>
+    <display-name>ListResidentController</display-name>
+    <servlet-name>ListResidentController</servlet-name>
+    <servlet-class>Servlet.ListResidentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListResidentController</servlet-name>
+    <url-pattern>/ListResidentController</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>CommViewResidentDetailServlet</display-name>
+    <servlet-name>CommViewResidentDetailServlet</servlet-name>
+    <servlet-class>Servlet.CommViewResidentDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CommViewResidentDetailServlet</servlet-name>
+    <url-pattern>/CommViewResidentDetailServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>UpdateReport</display-name>
+    <servlet-name>UpdateReport</servlet-name>
+    <servlet-class>Servlet.UpdateReport</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateReport</servlet-name>
+    <url-pattern>/UpdateReport</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>CommUpdateResidentController</display-name>
+    <servlet-name>CommUpdateResidentController</servlet-name>
+    <servlet-class>Servlet.CommUpdateResidentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CommUpdateResidentController</servlet-name>
+    <url-pattern>/CommUpdateResidentController</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>UpdateResidentListController</display-name>
+    <servlet-name>UpdateResidentListController</servlet-name>
+    <servlet-class>Servlet.UpdateResidentListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateResidentListController</servlet-name>
+    <url-pattern>/UpdateResidentListController</url-pattern>
+  </servlet-mapping>
   
 </web-app>

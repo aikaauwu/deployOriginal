@@ -191,7 +191,7 @@ a{margin-right: 4px;}
 									<td><c:out value="${report.reportDescription}" /></td>
 									<td><c:out value="${report.reportDateSubmit}" /></td>
 									<td><a href="viewReport?action=view&reportId=<c:out value="${report.reportId}"/>" class="button">View</a></td>
-									<td><a href="updateReport?action=update&reportId=<c:out value="${report.reportId}"/>" class="button">View</a></td>
+									<td><a href="UpdateReport?&reportId=<c:out value="${report.reportId}"/>" class="button">Update</a></td>
 							</c:forEach>
 			</table>
 </div>

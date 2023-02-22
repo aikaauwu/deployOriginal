@@ -40,7 +40,7 @@ public class viewReport extends HttpServlet {
 		// TODO Auto-generated method stub
 		String reportId = request.getParameter("reportId");
 		request.setAttribute("report",ReportDAO.getReportDetail(reportId));
-		RequestDispatcher view = request.getRequestDispatcher("res viewDetailReport.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("pat viewDetailReport.jsp");
 		view.forward(request, response);
 	}
 }

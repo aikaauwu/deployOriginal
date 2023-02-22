@@ -205,7 +205,7 @@ a{margin-right: 4px;}
 			        <b href="PReport.html"><img class="card-img" src="img/rs.png" alt="resident" /></b>
 			        <h3>RESIDENT</h3>
 	
-					<a href="comm ViewUpdateRes.jsp" target="_blank">Update Resident</a>
+					<a href="UpdateResidentListController" target="_blank">Update Resident</a>
 					<a href="ListResidentController">View Resident</a>
 					<hr>.</hr>
 				
