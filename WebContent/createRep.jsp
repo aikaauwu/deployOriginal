@@ -1,7 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="ISO-8859-1">
 <style>
@@ -147,29 +150,29 @@ a {text-decoration:none;}
 		 
             <div class="text"><b>CREATE REPORT</b></div>
 			
-			<form action="/action_page.php" method="post">
+			<form action="CreateReport" method="post">
   <div class="imgcontainer">
   </div>
 
 
 			<div class="data">
-                  <label>Patrolman ID:</label> 
-                  <input type="text" required>			  
+                  <label>Report Id:</label> 
+                  <input type="text" name="reportId" >			  
                </div>
 			
                <div class="data">
-                  <label>Username:</label> 	
-                  <input type="text" required>				  
+                  <label>Patrolman Id:</label> 	
+                  <input type="text" name="patrolmanId" >				  
                </div>
 			   
                <div class="data">
                   <label>Report Description:</label>  
-                  <input type="text" required> 					
+                  <input type="text" name="reportDescription" > 					
                </div>
                
                <div class="data">
-                  <label>Report Date:</label>  
-                  <input type="date" required> 					
+                  <label>Report Date: (YYYY-MM-DD)</label>  
+                  <input type="text" name="reportDateSubmit" > 					
                </div>
 			  
                <div class="btn">
@@ -185,4 +188,5 @@ a {text-decoration:none;}
       </div>
 			
 </body>
+
 </html>

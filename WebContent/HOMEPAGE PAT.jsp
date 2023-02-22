@@ -1,7 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="ISO-8859-1">
 <style>
@@ -148,7 +151,9 @@ a{margin-right: 4px;}
 <div class="header">
 
   <div class="header-right">
-   <a href="Pat Profile.jsp">PROFILE</a>
+   Welcome, <%=request.getAttribute("patrolmanUsername") %> 
+    <a href="PatrolmanViewProfileServlet?PatrolmanUsername=<%=request.getAttribute("patrolmanUsername") %> ">PROFILE</a>
+  
     <a href="login patrolman.jsp">LOGOUT</a>
   </div>
 </div>
@@ -161,7 +166,7 @@ a{margin-right: 4px;}
 			        <b href=""><img class="card-img" src="img/calander img.png" alt="SCHEDULE" /></b>
 		            <h3>SCHEDULE</h3>
 		
-				<a href="pat viewSchedule.jsp" target="_blank">View Schedule</a>
+				<a href="listScheduleControllerPat">View Schedule</a>
 				<hr>.</hr>
 				
 				
@@ -172,9 +177,8 @@ a{margin-right: 4px;}
 			        <b href=""><img class="card-img" src="img/report p.png" alt="REPORT" /></b>
 			        <h3>REPORT</h3>
 				
-					<a href="createRep.jsp" target="_blank">Create Report</a>
-					<a href="updateRep.jsp" target="_blank">Update Report</a>
-					<a href="pat viewReport.jsp" target="_blank">View Report</a>
+					<a href="createRep.jsp" >Create Report</a>
+					<a href="ListReportPat" >View Report</a>
 					<hr>.</hr>
 				
 		        </div>

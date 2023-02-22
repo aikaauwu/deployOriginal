@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,54 +114,49 @@ a {text-decoration:none;}
     <div class="center">
 	
          <div class="container">
-	      <a href="comm ViewCreateSchedule.jsp"><img src="img/close.png"></a>
+	      <a href="listScheduleControllerComm"><img src="img/close.png"></a>
 		 
             <div class="text"><b>CREATE SCHEDULE</b></div>
 			<div id="frmRegistration">
-            <form action="login_code.php">
+           
 			<div class="hero">
 			
-			<form action="/action_page.php" method="post">
+			<form action="createScheduleController" method="post">
   <div class="imgcontainer">
   </div>
-
+	
 
 			<div class="data">
                   <label>Patrolman ID:</label>
-                  <input type="text" required> 			  
+                  <input type="text" name ="patrolmanId" > 			  
                </div>
-			
-               <div class="data">
-                  <label>Username:</label> 		
-				<input type="text" required>				  
-               </div>
-			   
+             
                <div class="data">
                   <label>Schedule ID:</label> 
-                  <input type="text" required>  					
+                  <input type="text"  name ="scheduleId">  					
                </div>
 			   <div class="data">
-                  <label>Time:</label>    
-					<input type="time" required>
+                  <label>Time(Duration):</label>    
+					<input type="text"  name ="scheduleTime">
                </div>
 			   <div class="data">
-                  <label>Date:</label>    
-					<input type="date" required>
+                  <label>Date (YYYY-MM-DD):</label>    
+					<input type="text"  name ="scheduleDate">
                </div>
-			  
-			  
+                <div class="data">
+                  <label>Location ID:</label> 
+                  <input type="text"  name ="locationId">  					
+               </div>
 			  
                <div class="btn">
-                 <button type="submit" formaction="viewSchedule.jsp"><b>DONE</b></button>
+                 <button type="submit"><b>DONE</b></button>
                </div>
 			   
-			   
-			  
 			   
             </form>
 			</div>
          </div>
       </div>
 </body>
-</html>
+
 </html>

@@ -1,8 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="ISO-8859-1">
 <style>
@@ -112,7 +114,7 @@ a {text-decoration:none;}
     <div class="center">
 	
          <div class="container">
-	      <a href="pat viewSchedule.jsp"><img src="img/close.png"></a>
+	      <a href="listScheduleControllerPat"><img src="img/close.png"></a>
 		 
             <div class="text"><b>Location Detail</b></div>
 			<div id="frmRegistration">
@@ -122,26 +124,30 @@ a {text-decoration:none;}
 			
   					<div class="imgcontainer">
   					</div>
-		
-			
-		 	
+  						 	
 				<div class="data">
-                  <label> Location ID:</label> 		  
+                  <label> Location ID: <c:out value="${locations.locationId}" /> </label> 		  
                </div>
 			
                <div class="data">
-                  <label>Location Area:</label> 				  
+                  <label>Location Area: <c:out value="${locations.locationArea}" /> </label> 				  
                </div>
 			   
                <div class="data">
-                  <label>Location Address:</label>  				
+                  <label>Location Address: <c:out value="${locations.locationAddress}" /></label>  				
                </div>
-			
+		 
+  
+  		
+  		
+   
+</div>
             </form>
             
             </div>
 			</div>
          </div>
-      </div>
+
+      
 </body>
 </html>

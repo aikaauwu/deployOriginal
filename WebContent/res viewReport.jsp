@@ -1,7 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
-<html>
 <head>
 <meta charset="ISO-8859-1">
 <style>
@@ -172,34 +173,35 @@ a{margin-right: 4px;}
       <table class="table table-bordered">
        <h2>VIEW REPORT</h2>
 
-<table>
-  <tr>
-     <th>Report ID</th>
-	<th>Patrolman ID</th>
-    <th>Report Description</th>
-    <th>Date</th>
-    <th>Action</th>
-	   
-  </tr>
-  <tr>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-	 <td>-</td>
-	 <td><a href="res viewDetailReport.jsp" class="button button1"><b>VIEW </b></a></td>
-	 </tr>
-  
-  <tr>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-	 <td>-</td>
-	 <td><a href="res viewDetailReport.jsp" class="button button1"><b>VIEW </b></a></td>
-	  </tr>
- 
-</table>
+<table class="table table-bordered">
+       
+       <h2>VIEW REPORTS</h2>
+
+			<table>
+							<tr>
+								<th>Report Id</th>
+								<th>Patrolman Id</th>
+								<th>Report Description</th>
+								<th>Date Created</th>
+								
+								<th colspan="3"></th>
+							</tr>
+							<c:forEach items="${reports}" var="report">
+								<tr>
+									<td><c:out value="${report.reportId}" /></td>
+									<td><c:out value="${report.patrolmanId}" /></td>
+									<td><c:out value="${report.reportDescription}" /></td>
+									<td><c:out value="${report.reportDateSubmit}" /></td>
+									<td><a href="viewReportComm?action=view&reportId=<c:out value="${report.reportId}"/>" class="button">View</a></td>
+							</c:forEach>
+			</table>
+			
+			</table>
+
+
 </div>
 	</div>
 
 </body>
+
 </html>

@@ -1,8 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="ISO-8859-1">
 <style>
@@ -112,7 +114,7 @@ a {text-decoration:none;}
     <div class="center">
 	
          <div class="container">
-	      <a href="comm viewReport.jsp"><img src="img/close.png"></a>
+	      <a href="ListReportComm"><img src="img/close.png"></a>
 		 
             <div class="text"><b>Report Detail</b></div>
 			<div id="frmRegistration">
@@ -126,20 +128,18 @@ a {text-decoration:none;}
 			
 		 	
 				<div class="data">
-                  <label>Report ID:</label> 		  
+                  <label>Report ID: <c:out value="${report.reportId}" /> </label>              
+               </div>
+               <div class="data">
+                  <label>Patrolman ID: <c:out value="${report.patrolmanId}" /></label>              
+               </div>
+               <div class="data">
+                  <label>Phone Number: <c:out value="${report.reportDescription}" /></label>      
+               </div>
+                <div class="data">
+                  <label>Date Created: <c:out value="${report.reportDateSubmit}" /></label>      
                </div>
 			
-               <div class="data">
-                  <label>Patrolman ID:</label> 				  
-               </div>
-			   
-               <div class="data">
-                  <label>Report Description:</label>  				
-               </div>
-			
-			<div class="data">
-                  <label>Date:</label>  				
-             </div>
             </form>
             
             </div>
@@ -147,4 +147,5 @@ a {text-decoration:none;}
          </div>
       </div>
 </body>
+
 </html>

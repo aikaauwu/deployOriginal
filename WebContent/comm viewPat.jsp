@@ -1,7 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <style>
@@ -137,6 +139,7 @@ form .btn:hover button{
 				
 				<a href="HOMEPAGE COM.jsp"><img style="margin-left: -100px;" src="img/logout.png"></a>
 			</div>
+			</div>
 			
 			<div class="center">
 	
@@ -148,42 +151,31 @@ form .btn:hover button{
       <table class="table table-bordered">
        <h2>VIEW PATROLMAN</h2>
 
-<table>
-  <tr>
-     <th>Patrolman ID</th>
-	<th>Resident ID</th>
-    <th>Username</th>
-    <th>Password</th>
-    <th>Action</th>
-	   
-  </tr>
+<table class="table table-bordered">
+       
+    
+
+			<table>
+							<tr>
+								<th>Patrolman Id</th>
+								<th>Patrolman Username</th>
+								<th>Patrolman Password</th>
+								<th>Resident Id</th>														
+							</tr>
+							<c:forEach items="${patrolmans}" var="patrolman">
+								<tr>
+									<td><c:out value="${patrolman.patrolmanId}" /></td>
+									<td><c:out value="${patrolman.patrolmanUsername}" /></td>
+									<td><c:out value="${patrolman.patrolmanPassword}" /></td>
+									<td><c:out value="${patrolman.residentId}" /></td>
+							</c:forEach>
+			</table>
+			
+			</table>
   
-  <c:forEach items="${patrolmans} var="patrolman">
-  <tr>
-  		<td><c:out value="${patrolman.patrolmanId}" /></td>
-  		<td><c:out value="${patrolman.residentId}" /></td>
-  		<td><c:out value="${patrolman.patrolmanUsername}" /></td>
-  		<td><c:out value="${patrolman.patrolmanPassword}" /></td>  		
-    	 <td><a href="viewPatrolman?action=view&patrolmanId=<c:out value="${patrolman.patrolmanId}"/> class="button">View</a></td>
-</c:forEach>
-  <tr>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-	 <td>-</td>
-	 <td><a href="comm viewPatProfile.jsp" class="button button1"><b>VIEW </b></a></td>
-  </tr>
-  
-  <tr>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-	 <td>-</td>
-	 <td><a href="comm viewPatProfile.jsp" class="button button1"><b>VIEW </b></a></td>
-  </tr>
- 
-</table>
 </div>
-	</div>
+</div>
+</div>
+</div>
 </body>
 </html>
