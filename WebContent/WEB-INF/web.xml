@@ -276,5 +276,28 @@
     <url-pattern>/CreatePatrolmanServlet</url-pattern>
   </servlet-mapping>
   
+   <servlet>
+    <description></description>
+    <display-name>UpdatePatrolman</display-name>
+    <servlet-name>UpdatePatrolman</servlet-name>
+    <servlet-class>Servlet.UpdatePatrolman</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdatePatrolman</servlet-name>
+    <url-pattern>/UpdatePatrolman</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ListPatrolmanControllerUpdate</display-name>
+    <servlet-name>ListPatrolmanControllerUpdate</servlet-name>
+    <servlet-class>Servlet.ListPatrolmanControllerUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListPatrolmanControllerUpdate</servlet-name>
+    <url-pattern>/ListPatrolmanControllerUpdate</url-pattern>
+</servlet-mapping>
+  
+  
   
 </web-app>

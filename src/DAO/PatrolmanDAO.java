@@ -44,8 +44,8 @@ public class PatrolmanDAO {
 			ps = con.prepareStatement("INSERT INTO patrolman(patrolmanId,residentId,patrolmanUsername,patrolmanPassword)VALUES(?,?,?,?)");
 			ps.setString(1, patrolmanId);
 			ps.setInt(2, residentId);
-			ps.setString(2, patrolmanUsername);
-			ps.setString(3,patrolmanPassword);
+			ps.setString(3, patrolmanUsername);
+			ps.setString(4,patrolmanPassword);
 			
 			//execute query
 			ps.executeUpdate();
