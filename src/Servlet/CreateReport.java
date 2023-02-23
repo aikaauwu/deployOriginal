@@ -1,18 +1,19 @@
 package Servlet;
 
-import java.io.IOException;
+import java.io.IOException;    
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
-
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import DAO.ReportDAO;
 import Model.Report;
 
 /**
  * Servlet implementation class CreateResidentController
  */
-@WebServlet("/CreateReports")
+@WebServlet("/CreateReportz")
 public class CreateReport extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private ReportDAO dao;    
@@ -41,7 +42,7 @@ public class CreateReport extends HttpServlet {
 		dao.addReport(r); //invoke method addShawl() in ShawlDAO
 		
 		request.setAttribute("reports", ReportDAO.getReportDetails());
-		RequestDispatcher view = request.getRequestDispatcher("ListReportPat"); //dia pergi mana lepas tu
+		RequestDispatcher view = request.getRequestDispatcher("HOMEPAGE PAT.jsp");
 		view.forward(request, response);
 	}
 }

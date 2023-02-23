@@ -196,7 +196,7 @@ a{margin-right: 4px;}
 				
 					<a href="comm createPat.jsp" target =" blank">Create Patrolman</a>
 					<a href="comm ViewUpPat.jsp" target="_blank">Update Patrolman</a>
-					<a href="ListPatrolmanController">View Patrolmanz</a>
+					<a href="ListPatrolmanController">View Patrolman</a>
 					<hr>.</hr>
 				
 		        </div>

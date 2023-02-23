@@ -102,7 +102,7 @@ tr:nth-child(even) {
      
      	 <table class="table table-bordered">
        
-       <h2>VIEW RESIDENTS</h2>
+       <h2>UPDATE RESIDENTS</h2>
 
 			<table>
 							<tr>
@@ -124,7 +124,7 @@ tr:nth-child(even) {
 									<td><c:out value="${resident.residentUsername}" /></td>
 									<td><c:out value="${resident.residentPassword}" /></td>
 									<td><c:out value="${resident.residentPhoneNum}" /></td>
-									<td><a href="CommUpdateResidentController?&residentId=<c:out value="${resident.residentId}"/>" class="button">View</a></td>
+									<td><a href="CommUpdateResidentController?&residentId=<c:out value="${resident.residentId}"/>" class="button">Update</a></td>
 							</c:forEach>
 							
 						

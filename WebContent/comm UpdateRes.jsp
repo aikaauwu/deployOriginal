@@ -120,7 +120,6 @@ a {text-decoration:none;}
 		 
             <div class="text"><b>Update Resident Profile</b></div>
 			<div id="frmRegistration">
-            <form action="login_code.php">
 			<div class="hero">
 			
 			<form action="CommUpdateResidentController" method="post">
@@ -129,7 +128,7 @@ a {text-decoration:none;}
 
 
 			<div class="data">
-                  <label>Resident ID:</label> 			  
+                 
                </div>
                <div class="data">
                   <label>Name:</label> 
@@ -153,9 +152,10 @@ a {text-decoration:none;}
                </div>
 			   <div class="data">
                   <label>Password:</label>  
-					<input type="password" name="residentPassword" value="<c:out value="${resident.residentPassword}"/>">
+					<input type="text" name="residentPassword" value="<c:out value="${resident.residentPassword}"/>">
 					
-					<input type="hidden" name="reportId" value="<c:out value="${resident.residentId}"/>" /><br>
+					<input type="hidden" name="residentId" value="<c:out value="${resident.residentId}"/>" /><br>
+					
                </div>
                <div class="btn">
                  <button type="submit"><b>DONE</b></button>

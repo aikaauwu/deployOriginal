@@ -115,7 +115,7 @@ a {text-decoration:none;}
          <div class="container">
 	      <a href="HOMEPAGE RESIDENTS.jsp"><img src="img/close.png"></a>
 		 
-            <div class="text"><b>Profilez</b></div>
+            <div class="text"><b>Profile</b></div>
 			<div id="frmRegistration">
            
 			<div class="hero">
