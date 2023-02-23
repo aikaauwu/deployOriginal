@@ -11,7 +11,7 @@ import DAO.ResidentDAO;
 /**
  * Servlet implementation class ListShawlController
  */
-@WebServlet("/ListResidentControlle")
+@WebServlet("/UpListResidentControlle")
 public class UpdateResidentListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ResidentDAO dao;       
