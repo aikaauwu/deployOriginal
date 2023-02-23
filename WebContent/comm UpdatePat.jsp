@@ -128,7 +128,7 @@ a {text-decoration:none;}
 
 			<div class="data">
                   <label>Patrolman ID: 
-                 <c:out value="${patrolman.patrolmanId}"/>			  
+                  <input type="text" name="patrolmanId" value="<c:out value="${patrolman.patrolmanId}"/>"/></label> 			  
                </div>
 			
                <div class="data">
