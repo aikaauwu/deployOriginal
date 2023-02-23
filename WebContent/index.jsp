@@ -5,6 +5,22 @@
 <html lang="en">
 
 <head>
+<script>
+function validate(){
+if (document.form.residentUsername.value == ""){
+alert ( "Please enter Username." );
+document.loginform.userName.focus();
+return false;
+}
+if (document.form.residentPassword.value == ""){
+alert ( "Please enter password." );
+document.userform.password.focus();
+return false;
+}
+alert ( "Welcome" );
+return true;
+}
+</script>
 <meta charset="ISO-8859-1">
 <style>
 .container{

@@ -145,10 +145,7 @@ a {text-decoration:none;}
 			   <div class="data">
                   <label>Password: <c:out value="${resident.residentPassword}" /></label>      
                </div>
-               <div class="btn">
-                 <button type="submit" href="ResidentUpdateDetailServlet?residentId=<c:out value="${resident.residentId}"/>"><b>UPDATE</b></button>
-               </div>
-			   
+             
 			   
 			   
 			  

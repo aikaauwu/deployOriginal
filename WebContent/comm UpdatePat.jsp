@@ -128,7 +128,7 @@ a {text-decoration:none;}
 
 			<div class="data">
                   <label>Patrolman ID: 
-                  <input type="text" name="patrolmanId" value="<c:out value="${patrolman.patrolmanId}"/>"/></label> 			  
+                 <c:out value="${patrolman.patrolmanId}"/>			  
                </div>
 			
                <div class="data">
@@ -143,7 +143,7 @@ a {text-decoration:none;}
                </div>
 			   <div class="data">
                   <label>Password:</label>    
-					<input type="text" name="patrolmanPassword value="<c:out value="${patrolman.patrolmanPassword}"/>"/>
+					<input type="text" name="patrolmanPassword" value="<c:out value="${patrolman.patrolmanPassword}"/>"/>
                </div>
 			  
                <div class="btn">

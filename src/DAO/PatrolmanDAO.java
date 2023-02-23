@@ -166,15 +166,15 @@ public class PatrolmanDAO {
 	
 	
 	
-	public static Patrolman getPatrolmanProfile(String patrolmanUsername) { 
+	public static Patrolman getPatrolmanProfile(String patrolmanId) { 
 		Patrolman patrolman = new Patrolman();
 		try {
 			//call getConnection() method
 			con = ConnectionManager.getConnection();
 
 			
-			ps = con.prepareStatement("SELECT * FROM patrolman WHERE patrolmanUsername=?");
-			ps.setString(1, patrolmanUsername);
+			ps = con.prepareStatement("SELECT * FROM patrolman WHERE patrolmanId=?");
+			ps.setString(1, patrolmanId);
 
 			//execute query
 			
