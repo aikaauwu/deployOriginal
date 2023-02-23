@@ -270,7 +270,7 @@ public class ResidentDAO {
 			con = ConnectionManager.getConnection();
 			
 			//3. create statement
-			ps = con.prepareStatement("UPDATE resident SET residentUsername=?,residentPassword=?,residentName=?,residentAddress=?,residentEmail=?,residentPhoneNum WHERE residentId=?");
+			ps = con.prepareStatement("UPDATE resident SET residentUsername=?,residentPassword=?,residentName=?,residentAddress=?,residentEmail=?,residentPhoneNum=? WHERE residentId=?");
 			ps.setString(1, residentUsername);
 			ps.setString(2, residentPassword);
 			ps.setString(3, residentName);

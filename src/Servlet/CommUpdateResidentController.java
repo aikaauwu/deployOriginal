@@ -58,7 +58,7 @@ public class CommUpdateResidentController extends HttpServlet {
 		dao.updateResident(s); 
 		
 		request.setAttribute("residents", ResidentDAO.getResidentDetails());
-		RequestDispatcher view = request.getRequestDispatcher("ListResidentController");
+		RequestDispatcher view = request.getRequestDispatcher("HOMEPAGE COM.jsp");
 		view.forward(request, response);
 	}
 

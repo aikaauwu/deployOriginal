@@ -50,7 +50,7 @@ public class UpdateReport extends HttpServlet {
 		dao.updateReport(r); 
 		
 		request.setAttribute("reports", ReportDAO.getReportDetails());
-		RequestDispatcher view = request.getRequestDispatcher("ListReportPat");
+		RequestDispatcher view = request.getRequestDispatcher("HOMEPAGE PAT.jsp");
 		view.forward(request, response);
 	}
 }
