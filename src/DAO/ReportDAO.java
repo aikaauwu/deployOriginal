@@ -53,12 +53,43 @@ public class ReportDAO {
 			//call getConnection() method
 			con = ConnectionManager.getConnection();
 			
+
+			//getting the number for the last patrolman (last inserted patrolman tu nombor berapa)
+			 int trye = 0;
+				ps = con.prepareStatement("SELECT reportnum FROM report ORDER BY reportnum DESC LIMIT 1");
+		
+			//executing the query
+				rs = ps.executeQuery();
+				
+			//putting the number into a variable called "trye" 
+				if(rs.next()) {
+					trye = rs.getInt("reportnum");}
+					
+			//setting the string part of the id, which should be start with "RP"
+			String depan = "";
+				
+			if (trye + 1 < 10)
+			{
+				depan = "RP00";
+			}
+			
+			else if (trye + 1 >=10 && trye<100)
+			{
+				depan = "RP0";
+			}
+			
+		
+			int newtrye = trye + 1;
+				
+			String newid = depan + newtrye ;
+			
 			//create statement
-			ps = con.prepareStatement("INSERT INTO report(reportId, patrolmanId, reportDescription, reportDateSubmit) VALUES (?,?,?,?)");
-			ps.setString(1,reportId);
-			ps.setString(2,patrolmanId);
-			ps.setString(3,reportDescription);
-			ps.setString(4,reportDateSubmit);
+			ps = con.prepareStatement("INSERT INTO report(reportnum,reportId, patrolmanId, reportDescription, reportDateSubmit) VALUES (?,?,?,?,?)");
+			ps.setInt(1, newtrye);
+			ps.setString(2,newid);
+			ps.setString(3,patrolmanId);
+			ps.setString(4,reportDescription);
+			ps.setString(5,reportDateSubmit);
 
 			//execute query
 			ps.executeUpdate();

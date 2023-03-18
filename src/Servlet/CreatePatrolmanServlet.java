@@ -34,7 +34,7 @@ public class CreatePatrolmanServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		Patrolman s = new Patrolman();
-		s.setPatrolmanId(request.getParameter("patrolmanId"));
+		//s.setPatrolmanId(request.getParameter("patrolmanId"));
 		s.setResidentId(Integer.parseInt(request.getParameter("residentId")));
 		s.setPatrolmanUsername(request.getParameter("patrolmanUsername"));
 		s.setPatrolmanPassword(request.getParameter("patrolmanPassword"));

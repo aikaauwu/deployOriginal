@@ -2,11 +2,18 @@ package Model;
 
 public class Report{
 	
+	private int reportnum;
 	private String reportId;
 	private String patrolmanId;
 	private String reportDescription;
 	private String reportDateSubmit;
 	
+	public int getReportnum() {
+		return reportnum;
+	}
+	public void setReportnum(int reportnum) {
+		this.reportnum = reportnum;
+	}
 	public String getReportId() {
 		return reportId;
 	}

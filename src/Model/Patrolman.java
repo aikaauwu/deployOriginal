@@ -2,12 +2,19 @@ package Model;
 
 public class Patrolman {
 	
+	private int patrolnum;
 	private String patrolmanId;
 	private int residentId;
 	private String patrolmanUsername;
 	private String patrolmanPassword;
 	
-	
+
+	public int getPatrolnum() {
+		return patrolnum;
+	}
+	public void setPatrolnum(int patrolnum) {
+		this.patrolnum = patrolnum;
+	}
 	public String getPatrolmanId() {
 		return patrolmanId;
 	}

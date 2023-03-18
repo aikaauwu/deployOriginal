@@ -34,7 +34,7 @@ public class CommUpdateResidentController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int residentId = Integer.parseInt(request.getParameter("residentId"));
+		String residentId = request.getParameter("residentId");
 		request.setAttribute("resident", ResidentDAO.getResidentDetail(residentId));
 		RequestDispatcher view = request.getRequestDispatcher("comm UpdateRes.jsp");
 		view.forward(request, response);
@@ -46,7 +46,7 @@ public class CommUpdateResidentController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Resident s = new Resident();
-		s.setResidentId(Integer.parseInt(request.getParameter("residentId")));
+		s.setResidentId(request.getParameter("residentId"));
 		s.setResidentName(request.getParameter("residentName"));
 		s.setResidentPassword(request.getParameter("residentPassword"));
 		s.setResidentEmail(request.getParameter("residentEmail"));

@@ -297,6 +297,17 @@
     <servlet-name>ListPatrolmanControllerUpdate</servlet-name>
     <url-pattern>/ListPatrolmanControllerUpdate</url-pattern>
 </servlet-mapping>
+
+<servlet>
+    <description></description>
+    <display-name>PatrolViewScheduleDetail</display-name>
+    <servlet-name>PatrolViewScheduleDetail</servlet-name>
+    <servlet-class>Servlet.PatrolViewScheduleDetail</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PatrolViewScheduleDetail</servlet-name>
+    <url-pattern>/PatrolViewScheduleDetail</url-pattern>
+</servlet-mapping>
   
   
   

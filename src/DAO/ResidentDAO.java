@@ -23,12 +23,14 @@ public class ResidentDAO {
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 	private static String sql;
-	private int residentId;
+	private String residentId;
 	private String residentUsername,residentPassword,residentName,residentAddress,residentEmail;
 	private int residentPhoneNum;
 	
+	
+	
 	//for committee ONLY
-	public static Resident getResidentDetail(int residentId) { 
+	public static Resident getResidentDetail(String residentId) { 
 		Resident resident = new Resident();
 		try {
 			//call getConnection() method
@@ -45,7 +47,7 @@ public class ResidentDAO {
 			
 			//MYBAJU2
 			ps = con.prepareStatement("SELECT * FROM resident WHERE residentId=?");
-			ps.setInt(1, residentId);
+			ps.setString(1, residentId);
 
 			//execute query
 			
@@ -81,7 +83,7 @@ public class ResidentDAO {
 			
 			rs = ps.executeQuery();
 			if(rs.next()) {
-			resident.setResidentId(rs.getInt("residentId"));
+			resident.setResidentId(rs.getString("residentId"));
 			resident.setResidentName(rs.getString("residentName"));
 			resident.setResidentUsername(rs.getString("residentUsername"));
 			resident.setResidentPassword(rs.getString("residentPassword"));
@@ -145,7 +147,7 @@ public class ResidentDAO {
 			
 			rs = ps.executeQuery();
 			if(rs.next()) {
-			resident.setResidentId(rs.getInt("residentId"));
+			resident.setResidentId(rs.getString("residentId"));
 			resident.setResidentName(rs.getString("residentName"));
 			resident.setResidentUsername(rs.getString("residentUsername"));
 			resident.setResidentPassword(rs.getString("residentPassword"));
@@ -163,7 +165,7 @@ public class ResidentDAO {
 		return resident; 
 	}
 
-	//Complete addOrder() method
+	//resident register new account 
 		public void addResident(Resident bean) {
 		
 		residentId = bean.getResidentId();
@@ -182,17 +184,47 @@ public class ResidentDAO {
 			private String residentUsername,residentPassword,residentName,residentAddress,residentEmail;
 			private int residentPhoneNum;
 			*/
+			
+			//getting the number for the last patrolman (last inserted patrolman tu nombor berapa)
+			 int trye = 0;
+				ps = con.prepareStatement("SELECT residentnum FROM resident ORDER BY residentnum DESC LIMIT 1");
+		
+			//executing the query
+				rs = ps.executeQuery();
+				
+			//putting the number into a variable called "trye" 
+				if(rs.next()) {
+					trye = rs.getInt("residentnum");}
+					
+			//setting the string part of the id, which should be start with "P"
+			String depan = "";
+				
+			if (trye + 1 < 10)
+			{
+				depan = "RD00";
+			}
+			
+			else if (trye + 1 >=10 && trye<100)
+			{
+				depan = "RD0";
+			}
+			
+		
+			int newtrye = trye + 1;
+				
+			String newid = depan + newtrye ;
 	
-
+			
 			//create statement
-			ps = con.prepareStatement("INSERT INTO resident(residentId,residentUsername,residentPassword,residentName,residentAddress,residentEmail,residentPhoneNum)VALUES(?,?,?,?,?,?,?)");
-			ps.setInt(1,residentId);
-			ps.setString(2,residentUsername);
-			ps.setString(3,residentPassword);
-			ps.setString(4,residentName);
-			ps.setString(5,residentAddress);
-			ps.setString(6,residentEmail);
-			ps.setInt(7,residentPhoneNum);
+			ps = con.prepareStatement("INSERT INTO resident(residentnum,residentId,residentUsername,residentPassword,residentName,residentAddress,residentEmail,residentPhoneNum)VALUES(?,?,?,?,?,?,?,?)");
+			ps.setInt(1,newtrye);
+			ps.setString(2,newid);
+			ps.setString(3,residentUsername);
+			ps.setString(4,residentPassword);
+			ps.setString(5,residentName);
+			ps.setString(6,residentAddress);
+			ps.setString(7,residentEmail);
+			ps.setInt(8,residentPhoneNum);
 
 			//execute query
 			ps.executeUpdate();
@@ -232,7 +264,7 @@ public class ResidentDAO {
 				*/
 						while(rs.next()) {		//process result
 							Resident s = new Resident();
-							s.setResidentId(rs.getInt("residentId"));
+							s.setResidentId(rs.getString("residentId"));
 							s.setResidentUsername(rs.getString("residentUsername"));
 							s.setResidentPassword(rs.getString("residentPassword"));
 							s.setResidentName(rs.getString("residentName"));
@@ -277,7 +309,7 @@ public class ResidentDAO {
 			ps.setString(4, residentAddress);
 			ps.setString(5, residentEmail);
 			ps.setInt(6, residentPhoneNum);
-			ps.setInt(7, residentId);
+			ps.setString(7, residentId);
 			
 			//4. execute query
 			ps.executeUpdate();

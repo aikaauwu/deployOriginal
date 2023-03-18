@@ -2,7 +2,8 @@ package Model;
 
 public class Resident {
 	
-	private int residentId;
+	private int residentnum;
+	private String residentId;
 	private String residentUsername;
 	private String residentPassword;
 	private String residentName;
@@ -10,10 +11,16 @@ public class Resident {
 	private String residentAddress;
 	private String residentEmail;
 	
-	public int getResidentId() {
+	public int getResidentnum() {
+		return residentnum;
+	}
+	public void setResidentnum(int residentnum) {
+		this.residentnum = residentnum;
+	}
+	public String getResidentId() {
 		return residentId;
 	}
-	public void setResidentId(int residentId) {
+	public void setResidentId(String residentId) {
 		this.residentId = residentId;
 	}
 	public String getResidentUsername() {

@@ -39,7 +39,7 @@ public class CreateResidentServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		Resident s = new Resident();
-		s.setResidentId(Integer.parseInt(request.getParameter("residentId")));
+		//s.setResidentId(Integer.parseInt(request.getParameter("residentId")));
 		s.setResidentUsername(request.getParameter("residentUsername"));
 		s.setResidentName(request.getParameter("residentName"));
 		s.setResidentPassword(request.getParameter("residentPassword"));

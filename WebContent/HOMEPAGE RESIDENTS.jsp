@@ -156,6 +156,8 @@ a:hover, a:active {
     <a href="ResidentViewProfileServlet?residentUsername=<%=request.getAttribute("residentUsername") %> ">PROFILE</a>
     <a href="index.jsp">LOGOUT</a>
     
+    
+    
   
 
   </div>

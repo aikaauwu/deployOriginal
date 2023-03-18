@@ -14,23 +14,26 @@ public class PatrolmanDAO {
 	private static ResultSet rs = null;
 	private static String sql;
 	private String patrolmanId;
-	private int residentId;
+	private int residentId,patrolnum;
 	private String patrolmanUsername,patrolmanPassword;
 
+	
 	//Complete addOrder() method
-	public void addPatrolman(Patrolman bean) {
+public void addPatrolman(Patrolman bean) {
 		
 		/*private String patrolmanId;
 		private String residentId;
 		private String patrolmanUsername,patrolmanPassword;
 		*/
 		
+		patrolnum = bean.getPatrolnum();
 		patrolmanId = bean.getPatrolmanId();
 		residentId = bean.getResidentId();
 		patrolmanUsername = bean.getPatrolmanUsername();
 		patrolmanPassword = bean.getPatrolmanPassword();
 		
-
+			
+				
 		try {			
 			//call getConnection() method
 			con = ConnectionManager.getConnection();
@@ -41,11 +44,41 @@ public class PatrolmanDAO {
 			patrolmanPassword = bean.getPatrolmanPassword();
 			*/
 			
-			ps = con.prepareStatement("INSERT INTO patrolman(patrolmanId,residentId,patrolmanUsername,patrolmanPassword)VALUES(?,?,?,?)");
-			ps.setString(1, patrolmanId);
-			ps.setInt(2, residentId);
-			ps.setString(3, patrolmanUsername);
-			ps.setString(4,patrolmanPassword);
+			//getting the number for the last patrolman (last inserted patrolman tu nombor berapa)
+			 int trye = 0;
+				ps = con.prepareStatement("SELECT patrolnum FROM patrolman2 ORDER BY patrolnum DESC LIMIT 1");
+		
+			//executing the query
+				rs = ps.executeQuery();
+				
+			//putting the number into a variable called "trye" 
+				if(rs.next()) {
+					trye = rs.getInt("patrolnum");}
+					
+			//setting the string part of the id, which should be start with "P"
+			String depan = "";
+				
+			if (trye + 1 < 10)
+			{
+				depan = "P00";
+			}
+			
+			else if (trye + 1 >=10 && trye<100)
+			{
+				depan = "P0";
+			}
+			
+		
+			int newtrye = trye + 1;
+				
+			String newid = depan + newtrye ;
+				
+			ps = con.prepareStatement("INSERT INTO patrolman2(patrolnum,patrolmanId,residentId,patrolmanUsername,patrolmanPassword)VALUES(?,?,?,?,?)");
+			ps.setInt(1, newtrye);
+			ps.setString(2, newid);
+			ps.setInt(3, residentId);
+			ps.setString(4, patrolmanUsername);
+			ps.setString(5,patrolmanPassword);
 			
 			//execute query
 			ps.executeUpdate();
@@ -54,10 +87,13 @@ public class PatrolmanDAO {
 			//close connection
 			con.close();
 
-		}catch(Exception e) {
-			e.printStackTrace();				
+		} 
+		
+		catch(Exception e) {
+		e.printStackTrace();				
 		}
-	}	
+}
+	
 	
 	public String authenticateUser(Patrolman patrolman)
     {
@@ -270,7 +306,7 @@ public class PatrolmanDAO {
 			
 			rs = ps.executeQuery();
 			if(rs.next()) {
-			resident.setResidentId(rs.getInt("residentId"));
+			resident.setResidentId(rs.getString("residentId"));
 			resident.setResidentName(rs.getString("residentName"));
 			resident.setResidentUsername(rs.getString("residentUsername"));
 			resident.setResidentPassword(rs.getString("residentPassword"));

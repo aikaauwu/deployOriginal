@@ -25,8 +25,8 @@
   background: #C5DEDC;
   position: absolute;
   top: 3%;
-  width: 1185px;
-  height: 500px;
+  width: 1325px;
+  height: 1000px;
   padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-left: 10px;
@@ -161,7 +161,6 @@ a{margin-right: 4px;}
 
   <div class="header-right">
   <a href="HOMEPAGE PAT.jsp">HOME</a>
-   <a href="Pat Profile.jsp">PROFILE</a>
     <a href="login patrolman.jsp">LOGOUT</a>
   </div>
 </div>
@@ -196,7 +195,7 @@ a{margin-right: 4px;}
   		<td><c:out value="${schedule.scheduleDate}" /></td>
   		<td><c:out value="${schedule.locationId}" /></td>
   		<td><a href="viewLocation?action=view&locationId=<c:out value="${schedule.locationId}"/>"  class="button button1"><b>VIEW </b></a></td>
-	 	<td><a href="viewSchedule?action=view&scheduleId=<c:out value="${schedule.scheduleId}"/>" class="button button1"><b>VIEW </b></a></td>
+	 	<td><a href="PatrolViewScheduleDetail?action=view&scheduleId=<c:out value="${schedule.scheduleId}"/>" class="button button1"><b>VIEW </b></a></td>
 </c:forEach>
 	
   </tr>
