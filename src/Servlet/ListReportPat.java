@@ -16,13 +16,13 @@ import DAO.ReportDAO;
 @WebServlet("/ListReportP")
 public class ListReportPat extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private ReportDAO dao;       
+	//private ReportDAO dao;       
     /**
      * @see HttpServlet#HttpServlet()
      */
     public ListReportPat() {
         super();
-        dao = new ReportDAO();
+       // dao = new ReportDAO();
         // TODO Auto-generated constructor stub
     }
 

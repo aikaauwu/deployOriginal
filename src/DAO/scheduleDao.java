@@ -8,12 +8,12 @@ package DAO;
  * Student id:
  */
  
-import java.sql.*;       
+import java.sql.*;        
 import java.util.*;
-import java.util.Date;
+//import java.util.Date;
 
 import Database.ConnectionManager;
-import Model.Resident;
+//import Model.Resident;
 import Model.scheduleModel;
 
 
@@ -22,7 +22,7 @@ public class scheduleDao {
 	private static PreparedStatement ps = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
-	private static String sql;
+	//private static String sql;
 	private String scheduleId;
 	private String scheduleDate;
 	private String patrolmanId;

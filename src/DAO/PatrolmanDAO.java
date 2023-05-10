@@ -1,6 +1,6 @@
 package DAO;
 
-import java.sql.*;  
+import java.sql.*;   
 import java.util.*;
 
 import Database.ConnectionManager;
@@ -12,9 +12,10 @@ public class PatrolmanDAO {
 	private static PreparedStatement ps = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
-	private static String sql;
+	//private static String sql;
 	private String patrolmanId;
-	private int residentId,patrolnum;
+	private int residentId;
+	//,patrolnum;
 	private String patrolmanUsername,patrolmanPassword;
 
 	
@@ -26,7 +27,7 @@ public void addPatrolman(Patrolman bean) {
 		private String patrolmanUsername,patrolmanPassword;
 		*/
 		
-		patrolnum = bean.getPatrolnum();
+		//patrolnum = bean.getPatrolnum();
 		patrolmanId = bean.getPatrolmanId();
 		residentId = bean.getResidentId();
 		patrolmanUsername = bean.getPatrolmanUsername();

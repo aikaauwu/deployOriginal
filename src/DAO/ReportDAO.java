@@ -1,18 +1,18 @@
 package DAO;
 
-import java.sql.*; 
+import java.sql.*;  
 import java.util.*;
 
 import Database.ConnectionManager;
 import Model.Report;
-import Model.*;
+//import Model.*;
 
 public class ReportDAO {
 	private static Connection con = null;
 	private static PreparedStatement ps = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
-	private static String sql;
+	//private static String sql;
 	private String reportId;
 	private String patrolmanId, reportDescription, reportDateSubmit;
 		//list

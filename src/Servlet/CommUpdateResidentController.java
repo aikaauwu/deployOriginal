@@ -1,6 +1,6 @@
 package Servlet;
 
-import java.io.IOException;  
+import java.io.IOException;   
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -9,9 +9,9 @@ import javax.servlet.RequestDispatcher;
 
 import DAO.ResidentDAO;
 import Model.Resident;
-
+ 
 /**
- * Servlet implementation class ViewShawlController
+ * Servlet implementation class ViewShawlController 
  */
 /**
  * Servlet implementation class UpdateShawlController
